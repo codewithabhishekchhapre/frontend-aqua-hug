@@ -4,14 +4,20 @@ const showcase = [
   {
     title: "Cozy living room corner",
     desc: "Warm lighting + low-noise filtration for relaxing vibes.",
+    image:
+      "https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=900&q=80",
   },
   {
     title: "Modern office feature wall",
     desc: "Statement tank that matches clean furniture and wall tones.",
+    image:
+      "https://images.unsplash.com/photo-1504274066651-8d31a536b11a?auto=format&fit=crop&w=900&q=80",
   },
   {
     title: "Bedroom ambient setup",
     desc: "Soft shimmer + calm aquascape with easy care routines.",
+    image:
+      "https://images.unsplash.com/photo-1587613864521-9ef8dfe617cc?auto=format&fit=crop&w=900&q=80",
   },
 ] as const;
 
@@ -106,7 +112,14 @@ export default function RoomDecorShowcaseSection() {
             {showcase.map((item, idx) => (
               <FadeIn key={item.title} delayMs={180 + idx * 80}>
                 <div className="group overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
-                  <div className="h-40 bg-[radial-gradient(circle_at_20%_20%,rgba(26,88,55,0.26),transparent_55%),radial-gradient(circle_at_80%_80%,rgba(59,130,246,0.16),transparent_60%)]" />
+                  <div className="h-40 w-full overflow-hidden bg-slate-100">
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      loading="lazy"
+                    />
+                  </div>
                   <div className="p-5">
                     <p className="text-base font-semibold text-slate-900">
                       {item.title}
