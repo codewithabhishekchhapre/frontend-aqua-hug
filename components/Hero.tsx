@@ -39,7 +39,7 @@ export default function Hero() {
         onMouseLeave={handleMouseLeave}
       >
         {/* Glow behind hero card */}
-        <div className="pointer-events-none absolute inset-0 -z-10 mx-auto max-w-xl rounded-[3rem] bg-[radial-gradient(circle_at_top,_rgba(126,225,181,0.25),_transparent_60%),radial-gradient(circle_at_bottom,_rgba(15,118,110,0.35),_transparent_65%)] opacity-80 blur-3xl" />
+        <div className="pointer-events-none absolute inset-0 -z-10 mx-auto max-w-xl rounded-[3rem] bg-[radial-gradient(circle_at_top,rgba(126,225,181,0.25),transparent_60%),radial-gradient(circle_at_bottom,rgba(15,118,110,0.35),transparent_65%)] opacity-80 blur-3xl" />
 
         {/* Hero card with tilt */}
         <div
@@ -58,7 +58,7 @@ export default function Hero() {
           <div className="mt-6 space-y-4 text-center">
             <h1 className="text-balance text-3xl font-semibold tracking-tight text-white sm:text-4xl lg:text-5xl">
               Design, shop &amp; style your{" "}
-              <span className="bg-gradient-to-r from-emerald-300 via-teal-200 to-sky-300 bg-clip-text text-transparent">
+              <span className="bg-linear-to-r from-emerald-300 via-teal-200 to-sky-300 bg-clip-text text-transparent">
                 perfect underwater world
               </span>
             </h1>
