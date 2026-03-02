@@ -6,6 +6,7 @@ import RoomDecorShowcaseSection from "../components/landing/RoomDecorShowcaseSec
 import TestimonialsSection from "../components/landing/TestimonialsSection";
 import BlogCareGuideSection from "../components/landing/BlogCareGuideSection";
 import Footer from "../components/landing/Footer";
+import WhyAquaHugSection from "../components/landing/WhyAquaHugSection";
 
 export default function Home() {
   return (
@@ -43,6 +44,7 @@ export default function Home() {
       {/* Landing sections (white background) */}
       <ShopByCategorySection />
       <FeaturedCustomDesignsSection />
+      <WhyAquaHugSection />
       <RoomDecorShowcaseSection />
       <TestimonialsSection />
       <BlogCareGuideSection />
