@@ -5,16 +5,22 @@ const designs = [
     title: "Modern Minimal Rimless",
     tag: "Clean lines • Low-maintenance",
     desc: "A premium rimless tank with balanced filtration, curated stocking, and a calm scape that fits modern interiors.",
+    image:
+      "https://images.unsplash.com/photo-1513009082048-4b22e71c8e4f?auto=format&fit=crop&w=900&q=80",
   },
   {
     title: "Nature Planted Aquascape",
     tag: "Planted • High impact",
     desc: "A lush planted layout with lighting + CO₂ guidance, plant pairing, and a growth-friendly maintenance plan.",
+    image:
+      "https://images.unsplash.com/photo-1587613864521-9ef8dfe617cc?auto=format&fit=crop&w=900&q=80",
   },
   {
     title: "Luxury Wall Feature Tank",
     tag: "Statement piece • Room-ready",
     desc: "A striking wall-mounted or cabinet feature tank designed to match your furniture, lighting, and space flow.",
+    image:
+      "https://images.unsplash.com/photo-1518457202431-5e7ed5b25d9e?auto=format&fit=crop&w=900&q=80",
   },
 ] as const;
 
@@ -90,7 +96,14 @@ export default function FeaturedCustomDesignsSection() {
           {designs.map((d, idx) => (
             <FadeIn key={d.title} delayMs={idx * 90}>
               <div className="group overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
-                <div className="h-36 bg-[radial-gradient(circle_at_10%_0%,rgba(26,88,55,0.35),transparent_55%),radial-gradient(circle_at_80%_80%,rgba(14,165,233,0.22),transparent_60%)]" />
+                <div className="h-40 w-full overflow-hidden bg-slate-100">
+                  <img
+                    src={d.image}
+                    alt={d.title}
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
+                  />
+                </div>
                 <div className="p-5">
                   <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#1a5837]">
                     {d.tag}

@@ -1,13 +1,62 @@
 import FadeIn from "../ui/FadeIn";
 
 const categories = [
-  { title: "Fish", desc: "Handpicked species for your tank size.", cta: "Shop Fish" },
-  { title: "Plants", desc: "Low-tech to high-tech planted setups.", cta: "Shop Plants" },
-  { title: "Aquarium Tanks", desc: "Rimless, cabinet, wall-mount & more.", cta: "Shop Tanks" },
-  { title: "Filters & Pumps", desc: "Crystal-clear water, silent flow.", cta: "Shop Filtration" },
-  { title: "Lighting", desc: "Plant growth + beautiful shimmer.", cta: "Shop Lighting" },
-  { title: "Food & Medicine", desc: "Daily care, treatments, and kits.", cta: "Shop Care" },
-  { title: "Decorative Items", desc: "Stones, driftwood, and themed decor.", cta: "Shop Decor" },
+  {
+    title: "Fish",
+    desc: "Handpicked species for your tank size.",
+    cta: "Shop Fish",
+    image:
+      "https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=800&q=80",
+    imageAlt: "Colorful tropical fish in a clear aquarium.",
+  },
+  {
+    title: "Plants",
+    desc: "Low-tech to high-tech planted setups.",
+    cta: "Shop Plants",
+    image:
+      "https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=800&q=80",
+    imageAlt: "Green aquatic plants creating a lush aquascape.",
+  },
+  {
+    title: "Aquarium Tanks",
+    desc: "Rimless, cabinet, wall-mount & more.",
+    cta: "Shop Tanks",
+    image:
+      "https://images.unsplash.com/photo-1514894780887-121968d00567?auto=format&fit=crop&w=800&q=80",
+    imageAlt: "Modern rimless aquarium tank in a living room.",
+  },
+  {
+    title: "Filters & Pumps",
+    desc: "Crystal-clear water, silent flow.",
+    cta: "Shop Filtration",
+    image:
+      "https://images.unsplash.com/photo-1526481280695-3c687fd543c0?auto=format&fit=crop&w=800&q=80",
+    imageAlt: "Aquarium filter and tubing setup behind a tank.",
+  },
+  {
+    title: "Lighting",
+    desc: "Plant growth + beautiful shimmer.",
+    cta: "Shop Lighting",
+    image:
+      "https://images.unsplash.com/photo-1504274066651-8d31a536b11a?auto=format&fit=crop&w=800&q=80",
+    imageAlt: "Aquarium lit with blue and white lighting above.",
+  },
+  {
+    title: "Food & Medicine",
+    desc: "Daily care, treatments, and kits.",
+    cta: "Shop Care",
+    image:
+      "https://images.unsplash.com/photo-1518831959410-48a934ac8288?auto=format&fit=crop&w=800&q=80",
+    imageAlt: "Person feeding fish flakes into an aquarium.",
+  },
+  {
+    title: "Decorative Items",
+    desc: "Stones, driftwood, and themed decor.",
+    cta: "Shop Decor",
+    image:
+      "https://images.unsplash.com/photo-1523475472560-d2df97ec485c?auto=format&fit=crop&w=800&q=80",
+    imageAlt: "Aquarium with rocks and driftwood aquascape.",
+  },
 ] as const;
 
 function Icon({ name }: { name: string }) {
@@ -170,11 +219,20 @@ export default function ShopByCategorySection() {
             <FadeIn key={c.title} delayMs={idx * 60}>
               <a
                 href="#"
-                className="group relative block overflow-hidden rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-slate-300 hover:shadow-md"
+                className="group relative block overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-slate-300 hover:shadow-md"
               >
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_10%_0%,rgba(26,88,55,0.12),transparent_55%)] opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                <div className="relative flex items-start gap-4">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#1a5837]/10 ring-1 ring-[#1a5837]/20">
+                {/* Category image */}
+                <div className="relative h-32 w-full overflow-hidden bg-slate-100 sm:h-36">
+                  <img
+                    src={c.image}
+                    alt={c.imageAlt}
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
+                  />
+                </div>
+                <div className="relative flex items-start gap-4 p-5">
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-[#1a5837]/10 ring-1 ring-[#1a5837]/20">
                     <Icon name={c.title} />
                   </div>
                   <div className="min-w-0">
@@ -182,7 +240,7 @@ export default function ShopByCategorySection() {
                       {c.title}
                     </p>
                     <p className="mt-1 text-sm text-slate-600">{c.desc}</p>
-                    <div className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-[#1a5837]">
+                    <div className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[#1a5837]">
                       <span>{c.cta}</span>
                       <span className="transition-transform duration-300 group-hover:translate-x-1">
                         →
